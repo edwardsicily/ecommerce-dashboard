@@ -1,0 +1,16 @@
+.listItem {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  &:hover {
+    background: rgba(36, 36, 36, 0.25);
+  }
+  .icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+}
