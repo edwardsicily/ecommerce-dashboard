@@ -1,0 +1,11 @@
+@import "src/variables/variables.scss";
+.main {
+  display: flex;
+  padding: 1rem;
+  height: calc(100vh - $header-height);
+}
+.wrapper {
+  flex: 1;
+  border-radius: 6px;
+  border: 1px solid #fafafa;
+}
