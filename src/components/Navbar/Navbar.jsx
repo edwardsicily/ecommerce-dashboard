@@ -3,11 +3,17 @@ import navbar from "./navbar.module.scss";
 import { navBarLinks } from "./navbardata.jsx";
 import Licomponent from "./Licomponent";
 
-function Navbar() {
+function Navbar({ setRoutes }) {
   return (
     <ul className={navbar.nav}>
       {navBarLinks.map((item, idx) => (
-        <Licomponent icon={item.icon} label={item.label} key={idx} />
+        <Licomponent
+          route={item.route}
+          setRoutes={setRoutes}
+          icon={item.icon}
+          label={item.label}
+          key={idx}
+        />
       ))}
     </ul>
   );
