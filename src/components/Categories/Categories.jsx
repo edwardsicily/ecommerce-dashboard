@@ -5,12 +5,11 @@ import styles from "./styles.module.scss";
 import Loader from "../Loader/Loader";
 import Modal from "../Modal/Modal";
 
-function Categories() {
+function Categories({ setShowModal, setModalChildren }) {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [showModal, setShowModal] = useState(false);
 
-  const getData = () => {
+  const getCategoryData = () => {
     setLoading(true);
     GET("categories")
       .then((res) => setCategories(res))
@@ -26,9 +25,14 @@ function Categories() {
   if (loading) return <Loader />;
   return (
     <div className={styles.categoriesContainer}>
-      {showModal && <Modal setShowModal={setShowModal} getData={getData} />}
       <div className={styles.top}>
-        <button className={styles.addBtn} onClick={() => setShowModal(true)}>
+        <button
+          className={styles.addBtn}
+          onClick={() => {
+            setModalChildren("categories");
+            setShowModal(true);
+          }}
+        >
           Aggiungi
         </button>
       </div>
@@ -39,7 +43,7 @@ function Categories() {
             key={idx}
             prodName={item.name}
             id={item.id}
-            getData={getData}
+            getData={getCategoryData}
           />
         );
       })}

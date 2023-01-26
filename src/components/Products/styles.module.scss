@@ -1,0 +1,48 @@
+.top {
+  display: flex;
+  justify-content: end;
+  padding: 0.5rem;
+  align-items: center;
+  button {
+    padding: 6px 8px;
+  }
+}
+.prodWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.singleProdWrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  justify-content: space-between;
+}
+.mainDataContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.prodImages {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.prodTitle {
+}
+.prodPrice {
+}
+.btnContainer {
+  display: flex;
+  gap: 1rem;
+  button {
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border: none;
+    &:last-child {
+      color: red;
+    }
+  }
+}

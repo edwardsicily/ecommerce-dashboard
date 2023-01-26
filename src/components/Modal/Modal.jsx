@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Children } from "react";
 import Form from "../Form/Form";
 import styles from "./styles.module.scss";
 import { MdClose } from "react-icons/md";
 
-function Modal({ setShowModal, getData }) {
+function Modal({ setShowModal, getData, children }) {
   return (
     <div className={styles.Modal}>
       <div className={styles.container}>
@@ -15,7 +15,9 @@ function Modal({ setShowModal, getData }) {
         >
           <MdClose />
         </button>
-        <Form setShowModal={setShowModal} getData={getData} />
+        {children}
+
+        {/* <Form setShowModal={setShowModal} getData={getData} /> */}
       </div>
       <div className={styles.overlay}></div>
     </div>
