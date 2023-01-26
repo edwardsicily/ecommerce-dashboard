@@ -20,7 +20,6 @@ function Form({ getData, setShowModal }) {
     POST("categories", body).then((res) => {
       if (res.status > 199 && res.status < 400) {
         setShowModal(false);
-        getData();
         console.log("OK");
       }
       console.log(res);
@@ -56,7 +55,9 @@ function Form({ getData, setShowModal }) {
             onChange={(e) => handleImage(e)}
           />
         </label>
-        <button type="submit">POST</button>
+        <button className={styles.btn} type="submit">
+          POST
+        </button>
       </form>
     </div>
   );
